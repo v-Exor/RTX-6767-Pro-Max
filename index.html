@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CloudOS — Login</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@300;400;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="login-page">
+  <!-- Animated background -->
+  <div class="bg-blur-orbs">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+  </div>
+  <div class="bg-grid"></div>
+
+  <!-- Clock -->
+  <div class="lockscreen-clock">
+    <div class="clock-time" id="lockTime">00:00</div>
+    <div class="clock-date" id="lockDate">Monday, January 1</div>
+  </div>
+
+  <!-- Login Card -->
+  <div class="login-container">
+    <div class="login-card">
+      <div class="user-avatar">
+        <div class="avatar-ring"></div>
+        <div class="avatar-inner">
+          <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="20" cy="15" r="8" fill="rgba(255,255,255,0.9)"/>
+            <path d="M4 36c0-8.837 7.163-16 16-16s16 7.163 16 16" fill="rgba(255,255,255,0.9)"/>
+          </svg>
+        </div>
+      </div>
+      <h2 class="user-name">CloudOS User</h2>
+      <p class="user-subtitle">Operating System Simulator</p>
+
+      <div class="login-form">
+        <div class="input-group">
+          <input type="password" id="passwordInput" class="login-input" placeholder="Password" autocomplete="off" />
+          <button class="login-btn" id="loginBtn" onclick="attemptLogin()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+        <p class="login-hint">Press Enter or use password: <strong>1234</strong></p>
+        <p class="login-error" id="loginError"></p>
+      </div>
+
+      <div class="login-footer">
+        <button class="footer-btn" title="Power Off" onclick="showPowerMenu()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18.36 6.64a9 9 0 1 1-12.73 0"/>
+            <line x1="12" y1="2" x2="12" y2="12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Boot splash (shown first) -->
+  <div class="boot-splash" id="bootSplash">
+    <div class="boot-logo">
+      <div class="boot-logo-icon">
+        <div class="win-grid">
+          <span></span><span></span>
+          <span></span><span></span>
+        </div>
+      </div>
+      <span class="boot-logo-text">CloudOS</span>
+    </div>
+    <div class="boot-loader">
+      <div class="boot-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>
